@@ -1,0 +1,23 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "RESTful todo-listAPI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaannessy25/todo-list-api.git"
+  },
+  "keywords": [
+    "RESTful",
+    "API"
+  ],
+  "author": "Shaan Hurley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaannessy25/todo-list-api/issues"
+  },
+  "homepage": "https://github.com/shaannessy25/todo-list-api#readme"
+}
