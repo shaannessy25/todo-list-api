@@ -3,7 +3,11 @@
         <ul>
             {{#each todo}}
                 <li class="list-group-item">
-                    <div class="lead"><a href="/todo/{{this._id}}">{{this.title}}</a></div>
+                    <div class="lead">
+                        <input type="checkbox" value="None" name="check" checked />
+                        <a href="/todo/{{this._id}}">{{this.title}}</a>
+                        <p>{{this.summary}}</p>
+                    </div>
                 </li>
             {{/each}}
         </ul>

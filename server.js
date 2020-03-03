@@ -1,3 +1,6 @@
+require('dotenv').config()
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
 const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars');
@@ -13,7 +16,7 @@ app.use(express.static('public'));
 app.use(expressValidator());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-
+app.use(cookieParser());
 app.engine('handlebars', exphbs({defaultLayout:'main'}));
 app.set('view engine', 'handlebars');
 
@@ -23,7 +26,7 @@ require('./data/todo-db');
 
 //controllers
 require('./controllers/todo.js')(app);
-
+require('./controllers/user')(app);
 // app.get("/", (req,res) => {
 //   res.render('home')
 // })
