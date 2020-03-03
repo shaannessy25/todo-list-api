@@ -9,12 +9,17 @@
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">This is working</div>
+
+  <script src="//unpkg.com/docsify-copy-code/index.js"></script>
   <script>
     window.$docsify = {
-      name: 'todo-list',
-      repo: 'https://github.com/shaannessy25/todo-list-api'
-    }
+      name: 'Todo-List API',
+      repo: 'https://github.com/shaannessy25/todo-list-api',
+      loadSidebar: true,
+      auto2top: true,
+      plugins: [window.DocsifyCopyCodePlugin.init()]
+    };
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 </body>
