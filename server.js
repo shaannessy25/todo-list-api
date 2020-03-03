@@ -9,28 +9,26 @@ const port = 3000
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 
-
-// mongoose instance connection url connection
-// mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://localhost/Tododb'); 
 app.use(express.static('public'));
+app.use(expressValidator());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.engine('handlebars', exphbs({defaultLayout:'main'}));
 app.set('view engine', 'handlebars');
-app.use(express.static('public'));
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
 
 
-// app.use(function(req, res) {
-//   res.status(404).send({url: req.originalUrl + ' not found'})
-// });
+// Set db
+require('./data/todo-db');
 
-// var routes = require('./api/routes/todoListRoutes'); //importing route
-// routes(app); //register the route
+//controllers
+require('./controllers/todo.js')(app);
 
-app.get("/", (req, res) => {
-  res.render("homepage")
+// app.get("/", (req,res) => {
+//   res.render('home')
+// })
+app.get("/todo/new", (req, res) => {
+  res.render("new-todo")
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

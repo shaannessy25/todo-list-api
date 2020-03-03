@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <ul>
+            {{#each todo}}
+                <li class="list-group-item">
+                    <div class="lead"><a href="/todo/{{this._id}}">{{this.title}}</a></div>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
