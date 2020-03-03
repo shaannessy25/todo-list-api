@@ -15,9 +15,10 @@ module.exports = app => {
   });
 
   app.get("/", (req, res) => {
+      const currentUser = req.user;
       Todo.find({})
       .then(todo => {
-          res.render("todo-index", {todo});
+          res.render("todo-index", {todo, currentUser });
       })
       .catch(err => {
           console.log('error', err.message);
@@ -26,9 +27,10 @@ module.exports = app => {
 
   app.get("/todo/:id", function(req, res) {
       // LOOK UP THE Todo
+    const currentUser = req.user;
     Todo.findById(req.params.id)
       .then(todo => {
-        res.render("todo-show", { todo });
+        res.render("todo-show", { todo, currentUser });
       })
       .catch(err => {
         console.log(err.message);

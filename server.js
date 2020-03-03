@@ -31,7 +31,8 @@ require('./controllers/user')(app);
 //   res.render('home')
 // })
 app.get("/todo/new", (req, res) => {
-  res.render("new-todo")
+  const currentUser = req.user._id;
+  res.render("new-todo", { currentUser })
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

@@ -13,9 +13,12 @@
                 Account
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="/logout">Logout</a>
-                    <a class="dropdown-item" href="/login">Login</a>
-                    <a class="dropdown-item" href="/sign-up">Sign Up</a>
+                    {{#if currentUser}}
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    {{else}}
+                        <a class="dropdown-item" href="/login">Login</a>
+                        <a class="dropdown-item" href="/sign-up">Sign Up</a>
+                    {{/if}}
                 </div>
             </li>
         </ul>
