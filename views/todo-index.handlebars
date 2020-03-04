@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <ul>
+            {{#each todo}}
+                <li class="list-group-item">
+                    <div class="lead">
+                        <input type="checkbox" value="None" name="check" checked />
+                        <a href="/todo/{{this._id}}">{{this.title}}</a>
+                        <p>{{this.summary}}</p>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+
+<div class="sub-main">
+    <button class="button-three" onclick="window.location.href = '/todo/new';">Add Todo</button>
+</div>
