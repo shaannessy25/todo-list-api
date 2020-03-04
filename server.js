@@ -5,7 +5,11 @@ const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars');
 const path = require('path')
-const port = 3000
+const port = process.env.PORT
+const mongoose = require('mongoose')
+const mongo_uri = process.env.MONGODB_URI
+mongoose.connect(mongo_uri)
+
 // const mongoose = require('mongoose')
 // const Task = require('./api/models/todoListModel') 
 
