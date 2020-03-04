@@ -31,6 +31,7 @@ require('./data/todo-db');
 //controllers
 require('./controllers/todo.js')(app);
 require('./controllers/user')(app);
+require('./controllers/documentation')(app);
 // app.get("/", (req,res) => {
 //   res.render('home')
 // })

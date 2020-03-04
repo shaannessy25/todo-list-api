@@ -39,6 +39,8 @@ Add secret hash key to .env
 SECRET=????
 ```
 
+## Deployment
+[https://sh94-todolist.herokuapp.com/](https://sh94-todolist.herokuapp.com/)
 
 
 ## Running the tests
@@ -56,17 +58,12 @@ This file test to see if new todo can be created and displayed
 npm run test/todo
 ```
 
-### User test
 
-This test script checks to see if a user can: sign-up, login, and logout
 
-```
-npm run test/users
-```
 
-## Deployment
 
-Add additional notes about how to deploy this on a live system
+
+
 
 ## Built With
 
@@ -78,4 +75,3 @@ Add additional notes about how to deploy this on a live system
 ## Authors
 
 * **Shaan Hurley** - [Github](https://github.com/shaannessy25)
-
