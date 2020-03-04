@@ -52,9 +52,23 @@ describe('Todo', function() {
           done(err);
      });
     });
+    after(function (done) {
+        Todo.findOneAndDelete(newTodo)
+            .then(function (res) {
+                agent.close()
+    
+                User.findOneAndDelete({
+                        username: user.username
+                    })
+                    .then(function (res) {
+                        done()
+                    })
+                    .catch(function (err) {
+                        done(err);
+                    });
+            })
+            .catch(function (err) {
+                done(err);
+            });
+    });
 });
-
-
-after(function () {
-    Todo.findOneAndDelete(newTodo);
-  });
